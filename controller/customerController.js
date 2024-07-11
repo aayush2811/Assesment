@@ -1,6 +1,5 @@
 const Customer = require('../modals/customerModal');
 
-// List customers with search and pagination
 exports.getCustomers = async (req, res) => {
     const { first_name, last_name, city, page = 1, limit = 5 } = req.query;
     const query = {};
@@ -24,7 +23,6 @@ exports.getCustomers = async (req, res) => {
     }
 };
 
-// Get a customer by ID
 exports.getCustomerById = async (req, res) => {
     const { id } = req.params;
     try {
@@ -54,7 +52,6 @@ exports.getCities = async (req, res) => {
     }
 };
 
-// Add a new customer with validation
 exports.addCustomer = async (req, res) => {
     const { first_name, last_name, city, company } = req.body;
 
